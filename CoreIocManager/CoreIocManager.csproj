@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreApplication\CoreApplication.csproj" />
+    <ProjectReference Include="..\CoreEntityFramework\CoreEntityFramework.csproj" />
+  </ItemGroup>
+
+</Project>
