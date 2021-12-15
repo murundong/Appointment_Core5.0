@@ -1,9 +1,11 @@
 using Castle.Windsor;
+using CoreBaseClass;
 using CoreEntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,12 +36,12 @@ namespace CoreWeb_Appoint
                .AddTransient(typeof(App_DbContext));
             services.AddSingleton<IWindsorContainer, WindsorContainer>();
 
-            services.AddMvc().AddJsonOptions(options=> {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.JsonSerializerOptions.IncludeFields = true;
-                
             });
             services.AddAutoMapper(typeof(MapperConfigProfile));
-           
+            ConstConfig._configuration = Configuration;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

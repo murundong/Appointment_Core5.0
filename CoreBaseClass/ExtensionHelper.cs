@@ -9,6 +9,8 @@ namespace CoreBaseClass
 {
     public static class ExtensionHelper
     {
+
+
         public static bool IsAsync(this MethodInfo method)
         {
             return (
